@@ -1,11 +1,14 @@
 const express = require('express');
 const pool = require('../modules/pool');
-
 const router = express.Router();
+const API_KEY = process.env.API_KEY;
+
+//testing process.env
+console.log('API_KEY:', API_KEY);
 
 // return all favorite images
 router.get('/', (req, res) => {
-  const sqlText = `SELECT * FROM "favorites" ORDER BY "id";`;
+  const sqlText = `SELECT * FROM "favorites" ORDER BY "giphy_image_url";`;
   pool
     .query(sqlText)
     .then((result) => {
