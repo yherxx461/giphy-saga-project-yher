@@ -24,6 +24,14 @@ CREATE TABLE "favorites" (
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
+INSERT INTO "favorites" ("giphy_image_url")
+VALUES
+('wild'),
+  ('uproarious'),
+  ('poignant'),
+  ('felicitous'),
+  ('whimsical');
+
 -- You'll need a "favorites" table for storing each instance of
 -- a Giphy image that has been "favorited."
 -- Each favorite image can be assigned one of the existing
